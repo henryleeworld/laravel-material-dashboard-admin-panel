@@ -41,6 +41,13 @@
                                     @error('password')
                                     <p class="text-danger inputerror">{{ $message }}</p>
                                     @enderror
+                                    <div class="input-group input-group-outline mt-3">
+                                        <label class="form-label">{{ __('Password confirmation') }}</label>
+                                        <input type="password" class="form-control" name="password_confirmation" />
+                                    </div>
+                                    @error('password_confirmation')
+                                    <p class="text-danger inputerror">{{ $message }}</p>
+                                    @enderror
                                     <!--<div class="form-check form-check-info text-start ps-0 mt-3">
                                         <input class="form-check-input" type="checkbox" value="yes" id="is_agreed" checked />
                                         <label class="form-check-label" for="is_agreed"> {{ __('I agree the ') }}<a href="javascript:;" class="text-dark font-weight-bolder">{{ __('Terms and Conditions') }}</a> </label>
