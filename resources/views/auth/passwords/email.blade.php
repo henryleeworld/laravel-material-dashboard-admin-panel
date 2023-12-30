@@ -34,7 +34,7 @@
                                 @csrf
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label">{{ __('Email') }}</label>
-                                    <input type="email" class="form-control" name="email" />
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus/>
                                 </div>
                                 @error('email')
                                 <p class="text-danger inputerror">{{ $message }}</p>

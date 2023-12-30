@@ -22,28 +22,28 @@
                                     @csrf
                                     <div class="input-group input-group-outline mt-3">
                                         <label class="form-label">{{ __('Name') }}</label>
-                                        <input type="text" class="form-control" name="name" value="{{ old('name') }}" />
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus/>
                                     </div>
                                     @error('name')
                                     <p class="text-danger inputerror">{{ $message }}</p>
                                     @enderror
                                     <div class="input-group input-group-outline mt-3">
                                         <label class="form-label">{{ __('Email') }}</label>
-                                        <input type="email" class="form-control" name="email" value="{{ old('email') }}" />
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"/>
                                     </div>
                                     @error('email')
                                     <p class="text-danger inputerror">{{ $message }}</p>
                                     @enderror
                                     <div class="input-group input-group-outline mt-3">
                                         <label class="form-label">{{ __('Password') }}</label>
-                                        <input type="password" class="form-control" name="password" />
+                                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"/>
                                     </div>
                                     @error('password')
                                     <p class="text-danger inputerror">{{ $message }}</p>
                                     @enderror
                                     <div class="input-group input-group-outline mt-3">
-                                        <label class="form-label">{{ __('Password confirmation') }}</label>
-                                        <input type="password" class="form-control" name="password_confirmation" />
+                                        <label for="password-confirm" class="form-label">{{ __('Password confirmation') }}</label>
+                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password"/>
                                     </div>
                                     @error('password_confirmation')
                                     <p class="text-danger inputerror">{{ $message }}</p>

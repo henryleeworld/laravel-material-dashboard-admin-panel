@@ -46,21 +46,21 @@
                                 @endif
                                 <div class="input-group input-group-outline mt-3">
                                     <label class="form-label">{{ __('Email') }}</label>
-                                    <input type="email" class="form-control" name="email" value="" />
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
                                 </div>
                                 @error('email')
                                 <p class="text-danger inputerror">{{ $message }}</p>
                                 @enderror
                                 <div class="input-group input-group-outline mt-3">
                                     <label class="form-label">{{ __('Password') }}</label>
-                                    <input type="password" class="form-control" name="password" value="" />
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" />
                                 </div>
                                 @error('password')
                                 <p class="text-danger inputerror">{{ $message }}</p>
                                 @enderror
                                 <div class="form-check form-switch d-flex align-items-center my-3">
-                                    <input class="form-check-input" type="checkbox" id="rememberMe" />
-                                    <label class="form-check-label mb-0 ms-2" for="rememberMe">{{ __('Remember me') }}</label>
+                                    <input class="form-check-input" type="checkbox" id="remember" {{ old('remember') ? 'checked' : '' }} />
+                                    <label class="form-check-label mb-0 ms-2" for="remember">{{ __('Remember me') }}</label>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">{{ __('Sign in') }}</button>
